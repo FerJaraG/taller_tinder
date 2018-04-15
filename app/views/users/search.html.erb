@@ -1,0 +1,12 @@
+<%= current_user.email %>
+<div class="container">
+	<div class="card" style="width: 18rem;">
+	  	<img class="card-img-top" src="<%= @user.imagen %>" alt="Card image cap">
+	  	<div class="card-body">
+		    <h5 class="card-title"><%= @user.email %></h5>
+		    <p class="card-text"><%= @user.bio %></p>
+		    <a href="<%= interactions_path(like: false, user_two_id: @user.id) %>" data-method="post" class="btn btn-primary">Dislike</a>
+		    <a href="<%= interactions_path(like: true, user_two_id: @user.id) %>" data-method="post" class="btn btn-primary">Like</a>
+  		</div>
+	</div>
+</div>
